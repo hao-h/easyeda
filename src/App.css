@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  overflow: hidden;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+#root {
+  height: 100%;
+}
+
+.app-container {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.main-layout {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.editor-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #000;
+  position: relative;
+  margin: 0 6px;
+}
+
+.layout-toggler {
+  position: absolute;
+  top: 50%;
+  width: 6px;
+  height: 50px;
+  margin-top: -25px;
+  background: #d1d1d1;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s;
+}
+
+.layout-toggler:hover {
+  background: #5588ff;
+}
+
+.layout-toggler .toggle {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.layout-toggler.left .toggle::after {
+  content: '';
+  position: absolute;
+  left: 1px;
+  top: 50%;
+  margin-top: -4px;
+  border: 4px solid transparent;
+  border-left-color: #fff;
+}
+
+.layout-toggler.right .toggle::after {
+  content: '';
+  position: absolute;
+  right: 1px;
+  top: 50%;
+  margin-top: -4px;
+  border: 4px solid transparent;
+  border-right-color: #fff;
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgba(205, 227, 255, 0.8);
+  box-shadow: inset 0 0 6px rgba(98, 176, 255, 0.5);
+  border: solid 1px #62b0ff;
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(205, 227, 255, 0.4);
+}
